@@ -23,7 +23,7 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
             height: 24,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4),
-              border: Border.all(color: ColorConstBottomSheet.bottomSheetCheckboxBorder,), // пришлось сделать другой цвет, так как #D9E2F1 сливается с фоном
+              border: Border.all(color: ColorConstBottomSheet.bottomSheetCheckboxBorder,),
             ),
             child: Checkbox(
               side: const BorderSide(color: Colors.transparent,),

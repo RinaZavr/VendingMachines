@@ -12,7 +12,7 @@ class LoadButtonsWidget extends StatefulWidget {
 }
 
 class _LoadButtonsWidgetState extends State<LoadButtonsWidget> {
-  int loadPer = 100;
+  int loadPer = 85;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

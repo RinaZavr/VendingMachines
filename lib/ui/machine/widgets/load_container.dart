@@ -35,10 +35,12 @@ class _LoadContainerState extends State<LoadContainer> {
         },
       );
     }
-    setState(() {
-      bg = ColorConstMachine.machineButtonsColor;
-      isFill = true;
-    });
+    if(widget.loadPer == 100) {
+      setState(() {
+        bg = ColorConstMachine.machineButtonsColor;
+        isFill = true;
+      });
+    }
   }
 
   @override

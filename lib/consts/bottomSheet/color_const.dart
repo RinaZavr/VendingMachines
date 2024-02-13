@@ -9,7 +9,7 @@ abstract class ColorConstBottomSheet {
   static const Color bottomSheetFormCashHint = Color(0xFF999999);
   static const Color bottomSheetFormCashBorder = Color(0xFFD9E2F1);
 
-  static const Color bottomSheetCheckboxBorder = Colors.black38;
+  static const Color bottomSheetCheckboxBorder = Color(0xFFD9E2F1);
   static const Color bottomSheetCheckboxCheck = Color(0xFF131037);
 
   static const Color bottomSheetMode = Colors.white;
