@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:vendingmachines/consts/machine/string_consts.dart';
+import 'package:vendingmachines/consts/machine/textstyle_const.dart';
 
 class FinanceWidget extends StatelessWidget {
   const FinanceWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List info = [
-      ['assets/Cashback.png', '5700 ₽', 'Деньги в ТА'],
-      ['assets/Money.png', '1 255 ₽', 'Сдача'],
-      ['assets/Cashback.png', '5700 ₽', 'Деньги в ТА'],
-      ['assets/Money.png', '1 255 ₽', 'Сдача'],
-    ];
+    Size size = MediaQuery.of(context).size;
+    
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          'Финансы',
-          style: TextStyle(
-              color: Color(0xFF131037),
-              fontSize: 16,
-              fontWeight: FontWeight.w500),
+          StringConstsMachine.machineFinanceTitle,
+          style: TextStyleConstMachine.machineFinanceTitle,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16),
@@ -29,27 +24,21 @@ class FinanceWidget extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return SizedBox(
-                  width: 180,
+                  width: size.width * 0.43,
                   child: ListTile(
-                    leading: Image.asset(info[index][0]),
+                    leading: Image.asset(StringConstsMachine.machineFinances[index][0]),
                     title: Text(
-                      info[index][1],
-                      style: const TextStyle(
-                          color: Color(0xFF131037),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
+                      StringConstsMachine.machineFinances[index][1],
+                      style: TextStyleConstMachine.machineFinanceListTitle,
                     ),
                     subtitle: Text(
-                      info[index][2],
-                      style: const TextStyle(
-                          color: Color(0xFF131037),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300),
+                      StringConstsMachine.machineFinances[index][2],
+                      style: TextStyleConstMachine.machineFinanceListHint,
                     ),
                   ),
                 );
               },
-              itemCount: info.length,
+              itemCount: StringConstsMachine.machineFinances.length,
             ),
           ),
         ),

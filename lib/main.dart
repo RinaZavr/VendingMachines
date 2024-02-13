@@ -10,8 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MachineMainScreen(),
+    return MaterialApp(
+      theme: ThemeData(bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent)),
+      home: const MachineMainScreen(),
     );
   }
 }

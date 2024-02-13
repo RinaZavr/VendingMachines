@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vendingmachines/consts/machine/color_const.dart';
+import 'package:vendingmachines/consts/machine/textstyle_const.dart';
 
 class EventTemplateWidget extends StatelessWidget {
   final String time;
@@ -12,30 +14,21 @@ class EventTemplateWidget extends StatelessWidget {
           margin: const EdgeInsets.only(top: 8,),
           decoration: BoxDecoration(
               border: const Border(
-                left: BorderSide(color: Color(0xFFF97879), width: 4),
+                left: BorderSide(color: ColorConstMachine.machineEventBorder, width: 4),
               ),
               borderRadius: BorderRadius.circular(4)),
           child: ListTile(
             leading: Text(
               time,
-              style: const TextStyle(
-                  color: Color(0xFF333333),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500),
+              style: TextStyleConstMachine.machineEventListTime,
             ),
             title: Text(
               title,
-              style: const TextStyle(
-                  color: Color(0xFF131037),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
+              style: TextStyleConstMachine.machineEventListTitle,
             ),
             subtitle: subtitle != null ? Text(
               subtitle!,
-              style: const TextStyle(
-                  color: Color(0xFFCCCCCC),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400),
+              style: TextStyleConstMachine.machineEventListHint,
             ) : null,
           ),
         );

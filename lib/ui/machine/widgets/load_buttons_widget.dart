@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vendingmachines/consts/machine/color_const.dart';
+import 'package:vendingmachines/consts/machine/string_consts.dart';
+import 'package:vendingmachines/consts/machine/textstyle_const.dart';
 import 'package:vendingmachines/ui/machine/widgets/load_container.dart';
 
 class LoadButtonsWidget extends StatefulWidget {
@@ -9,13 +12,14 @@ class LoadButtonsWidget extends StatefulWidget {
 }
 
 class _LoadButtonsWidgetState extends State<LoadButtonsWidget> {
-  int loadPer = 85;
+  int loadPer = 100;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 24),
       child: SizedBox(
-        height: 160,
+        height: size.width * 0.38,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -27,40 +31,34 @@ class _LoadButtonsWidgetState extends State<LoadButtonsWidget> {
                   Container(
                     margin: const EdgeInsets.only(left: 16),
                     height: 48,
-                    width: 160,
+                    width: size.width * 0.38,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: const Color(0xFF218CEF),
+                        color: ColorConstMachine.machineButtonsColor,
                       ),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Center(
                       child: Text(
-                        'Загрузка',
-                        style: TextStyle(
-                            color: Color(0xFF218CEF),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
+                        StringConstsMachine.machineLoadButtonOne,
+                        style: TextStyleConstMachine.machineLoadButton,
                       ),
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 16, top: 16),
                     height: 48,
-                    width: 160,
+                    width: size.width * 0.38,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: const Color(0xFF218CEF),
+                        color: ColorConstMachine.machineButtonsColor,
                       ),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Center(
                       child: Text(
-                        'Инвентаризация',
-                        style: TextStyle(
-                            color: Color(0xFF218CEF),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
+                        StringConstsMachine.machineLoadButtonTwo,
+                        style: TextStyleConstMachine.machineLoadButton,
                       ),
                     ),
                   ),

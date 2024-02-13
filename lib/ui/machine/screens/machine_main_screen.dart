@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vendingmachines/consts/machine/color_const.dart';
+import 'package:vendingmachines/consts/machine/string_consts.dart';
+import 'package:vendingmachines/consts/machine/textstyle_const.dart';
 import 'package:vendingmachines/ui/bottomSheet/screens/bottom_sheet_screen.dart';
 import 'package:vendingmachines/ui/machine/widgets/events_widget.dart';
 import 'package:vendingmachines/ui/machine/widgets/finance_widget.dart';
@@ -20,7 +23,7 @@ class _MachineMainScreenState extends State<MachineMainScreen> {
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.black,
+            color: ColorConstMachine.machineAppBar,
           ),
           onPressed: () {},
         ),
@@ -28,17 +31,19 @@ class _MachineMainScreenState extends State<MachineMainScreen> {
           IconButton(
             icon: const Icon(
               Icons.settings,
-              color: Colors.black,
+              color: ColorConstMachine.machineAppBar,
             ),
             onPressed: () {
               showModalBottomSheet<void>(
-                  constraints: BoxConstraints(
-                      maxHeight: MediaQuery.of(context).size.height - 100),
-                  isScrollControlled: true,
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const BottomSheetScreen();
-                  });
+                backgroundColor: Colors.white,
+                constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height - 100),
+                isScrollControlled: true,
+                context: context,
+                builder: (BuildContext context) {
+                  return const BottomSheetScreen();
+                },
+              );
             },
           ),
         ],
@@ -49,11 +54,8 @@ class _MachineMainScreenState extends State<MachineMainScreen> {
           slivers: [
             SliverToBoxAdapter(
               child: Text(
-                'Торговые автоматы',
-                style: TextStyle(
-                    color: Color(0xFF131037),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700),
+                StringConstsMachine.machineTitle,
+                style: TextStyleConstMachine.machineTitle,
               ),
             ),
             SliverToBoxAdapter(

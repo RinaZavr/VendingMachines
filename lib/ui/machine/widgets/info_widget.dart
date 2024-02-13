@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:vendingmachines/consts/machine/color_const.dart';
+import 'package:vendingmachines/consts/machine/string_consts.dart';
+import 'package:vendingmachines/consts/machine/textstyle_const.dart';
 
 class InfoWidget extends StatelessWidget {
   const InfoWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List info = [
-      ['Тип шины', 'MDB'],
-      ['Уровень сигнала', 'Стабильный'],
-      ['Идентификатор', '13856646'],
-      ['Модем', '3463457365'],
-    ];
     return Stack(
       children: [
         Padding(
@@ -19,12 +16,8 @@ class InfoWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                '54467345',
-                style: TextStyle(
-                  color: Color(0xFF131037),
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+                StringConstsMachine.machineInfoTitle,
+                style: TextStyleConstMachine.machineInfoTitle
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 8),
@@ -32,30 +25,22 @@ class InfoWidget extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.circle,
-                      color: Color(0xFFF97879),
+                      color: ColorConstMachine.machineInfoStatus,
                       size: 8,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 8.0),
+                      padding: EdgeInsets.only(left: 8),
                       child: Text(
-                        'Не работает',
-                        style: TextStyle(
-                          color: Color(0xFF131037),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                        ),
+                        StringConstsMachine.machineInfoStatus,
+                        style: TextStyleConstMachine.machineInfoMain
                       ),
                     ),
                   ],
                 ),
               ),
               const Text(
-                'ТЦ Мега, Химки',
-                style: TextStyle(
-                  color: Color(0xFF999999),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w300,
-                ),
+                StringConstsMachine.machineInfoAddress,
+                style: TextStyleConstMachine.machineInfoHint,
               ),
               const SizedBox(
                 height: 24,
@@ -67,25 +52,17 @@ class InfoWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        info[index][0],
-                        style: const TextStyle(
-                          color: Color(0xFF131037),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                        ),
+                        StringConstsMachine.machineInfo[index][0],
+                        style: TextStyleConstMachine.machineInfoMain,
                       ),
                       Text(
-                        info[index][1],
-                        style: const TextStyle(
-                          color: Color(0xFF131037),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                        ),
+                        StringConstsMachine.machineInfo[index][1],
+                        style: TextStyleConstMachine.machineInfoMain,
                       ),
                     ],
                   );
                 }),
-                itemCount: info.length,
+                itemCount: StringConstsMachine.machineInfo.length,
               ),
             ],
           ),
@@ -93,15 +70,11 @@ class InfoWidget extends StatelessWidget {
         const Align(
           alignment: Alignment.topRight,
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8),
             child: Text(
-              'Снековый',
+              StringConstsMachine.machineInfoType,
               textAlign: TextAlign.end,
-              style: TextStyle(
-                color: Color(0xFF999999),
-                fontSize: 12,
-                fontWeight: FontWeight.w300,
-              ),
+              style: TextStyleConstMachine.machineInfoHint,
             ),
           ),
         ),
